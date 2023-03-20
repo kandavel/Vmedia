@@ -1,0 +1,20 @@
+PODS:
+  - Alamofire (5.6.2)
+  - SpreadsheetView (0.9.1)
+
+DEPENDENCIES:
+  - Alamofire (= 5.6.2)
+  - SpreadsheetView
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - SpreadsheetView
+
+SPEC CHECKSUMS:
+  Alamofire: d368e1ff8a298e6dde360e35a3e68e6c610e7204
+  SpreadsheetView: 688dbd19f2b355df0eb09e486266fd913a013449
+
+PODFILE CHECKSUM: 7a5a0fcd589309c7e77322a269a458a6b00a792a
+
+COCOAPODS: 1.11.3
