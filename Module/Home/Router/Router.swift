@@ -15,18 +15,16 @@ protocol ChannelListProtocol: AnyObject {
 class ChannelListRouter: ChannelListProtocol {
 
     static func createHomeModule() -> UIViewController {
-        let view = ChannelListViewController()
         let presenter: ChannelListPresentorProtocol & ChannelListInteractorOutputProtocol = ChannelListPresentor()
         let interactor: ChannelListInteractorProtocol = ChannelListViewInteractor()
         let wireframe: ChannelListProtocol = ChannelListRouter()
         let networkManager: NetworkManagerProtocol = NetworkManager()
-
-        view.presenter = presenter
-        presenter.view = view
         presenter.interactor = interactor
         presenter.wireframe = wireframe
         interactor.presenter = presenter
         interactor.networkManager = networkManager
+        let view = ChannelListViewController(view: presenter)
+        presenter.view = view
         return view
     }
 

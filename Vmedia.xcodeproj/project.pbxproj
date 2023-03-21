@@ -46,6 +46,8 @@
 		CC075D6829C7039E00664C7D /* CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC075D6729C7039E00664C7D /* CollectionView.swift */; };
 		CC075D6A29C703A900664C7D /* Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC075D6929C703A900664C7D /* Optional.swift */; };
 		CC142E0C29C823F1009706C7 /* SpreadSheetCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC142E0B29C823F1009706C7 /* SpreadSheetCollection.swift */; };
+		CC508C7B29C8DA96000F6162 /* ChannelProgramList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC508C7A29C8DA96000F6162 /* ChannelProgramList.swift */; };
+		CC508C7D29C8EEF7000F6162 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC508C7C29C8EEF7000F6162 /* Date.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,6 +112,8 @@
 		CC075D6729C7039E00664C7D /* CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionView.swift; sourceTree = "<group>"; };
 		CC075D6929C703A900664C7D /* Optional.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Optional.swift; sourceTree = "<group>"; };
 		CC142E0B29C823F1009706C7 /* SpreadSheetCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpreadSheetCollection.swift; sourceTree = "<group>"; };
+		CC508C7A29C8DA96000F6162 /* ChannelProgramList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelProgramList.swift; sourceTree = "<group>"; };
+		CC508C7C29C8EEF7000F6162 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		D5534ED153350199E71FC375 /* Pods_VmediaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VmediaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9D532E3AEDA17167AB98638 /* Pods-Vmedia-VmediaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vmedia-VmediaUITests.release.xcconfig"; path = "Target Support Files/Pods-Vmedia-VmediaUITests/Pods-Vmedia-VmediaUITests.release.xcconfig"; sourceTree = "<group>"; };
 		E08855BC5AE700023402E402 /* Pods-Vmedia.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vmedia.release.xcconfig"; path = "Target Support Files/Pods-Vmedia/Pods-Vmedia.release.xcconfig"; sourceTree = "<group>"; };
@@ -242,6 +246,7 @@
 			children = (
 				CC075D6729C7039E00664C7D /* CollectionView.swift */,
 				CC075D6929C703A900664C7D /* Optional.swift */,
+				CC508C7C29C8EEF7000F6162 /* Date.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -329,6 +334,7 @@
 			children = (
 				CC075D4929C4FCFE00664C7D /* Channel.swift */,
 				CC075D4B29C4FE9200664C7D /* ChannelProgram.swift */,
+				CC508C7A29C8DA96000F6162 /* ChannelProgramList.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -602,6 +608,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CC075D5129C5116D00664C7D /* NetworkManager.swift in Sources */,
+				CC508C7D29C8EEF7000F6162 /* Date.swift in Sources */,
 				CC075D4C29C4FE9200664C7D /* ChannelProgram.swift in Sources */,
 				CC075D5729C5147900664C7D /* Interactor.swift in Sources */,
 				CC075D3A29C4E53100664C7D /* BaseViewController.swift in Sources */,
@@ -614,6 +621,7 @@
 				CC142E0C29C823F1009706C7 /* SpreadSheetCollection.swift in Sources */,
 				CC075D3829C4E52700664C7D /* ImageLoader.swift in Sources */,
 				CC075D6A29C703A900664C7D /* Optional.swift in Sources */,
+				CC508C7B29C8DA96000F6162 /* ChannelProgramList.swift in Sources */,
 				CC075CFC29C459A800664C7D /* Vmedia.xcdatamodeld in Sources */,
 				CC075D6429C5F7C900664C7D /* RouterProtocol.swift in Sources */,
 				CC075D3229C4E52700664C7D /* ReachabilityProtocol.swift in Sources */,

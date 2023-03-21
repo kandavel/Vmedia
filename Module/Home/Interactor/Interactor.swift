@@ -19,8 +19,8 @@ protocol ChannelListInteractorOutputProtocol: AnyObject {
     func didFetchChannelProgramListData(completionhandler : Result<[ChannelProgram], NetworkError>)
 }
 class ChannelListViewInteractor : ChannelListInteractorProtocol {
-   weak var presenter: ChannelListInteractorOutputProtocol?
-   weak var networkManager: NetworkManagerProtocol?
+    var presenter: ChannelListInteractorOutputProtocol?
+    var networkManager: NetworkManagerProtocol?
 }
 
 extension ChannelListViewInteractor  {

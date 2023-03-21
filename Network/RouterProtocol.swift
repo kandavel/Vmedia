@@ -56,7 +56,7 @@ enum Router: URLRequestConvertible {
         urlRequest.httpMethod = method.rawValue
         urlRequest.setValue("application/json", forHTTPHeaderField: "Accept")
         urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        urlRequest.cachePolicy  = .returnCacheDataDontLoad
+       // urlRequest.cachePolicy  = .returnCacheDataDontLoad
 
         let encoding: ParameterEncoding = {
             switch method {

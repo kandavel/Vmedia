@@ -11,7 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ChannelListViewController" customModule="Vmedia" customModuleProvider="target">
             <connections>
-                <outlet property="channelListCollectionView" destination="xiI-aU-Lsr" id="lgz-4Y-AI9"/>
+                <outlet property="channelListCollectionView" destination="ODy-Dn-BdP" id="tUG-zz-A5s"/>
                 <outlet property="view" destination="B0o-rx-Hbi" id="S52-f1-cTk"/>
             </connections>
         </placeholder>
@@ -20,24 +20,18 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="xiI-aU-Lsr">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ODy-Dn-BdP" customClass="SpreadsheetView" customModule="SpreadsheetView">
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="6Yi-0u-2OW">
-                        <size key="itemSize" width="128" height="128"/>
-                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                    </collectionViewFlowLayout>
-                </collectionView>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="swc-b5-P59"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="swc-b5-P59" firstAttribute="trailing" secondItem="xiI-aU-Lsr" secondAttribute="trailing" id="Jjd-c8-luL"/>
-                <constraint firstItem="xiI-aU-Lsr" firstAttribute="top" secondItem="swc-b5-P59" secondAttribute="top" id="Vj2-q8-Kal"/>
-                <constraint firstItem="swc-b5-P59" firstAttribute="bottom" secondItem="xiI-aU-Lsr" secondAttribute="bottom" id="bpb-6U-xeM"/>
-                <constraint firstItem="xiI-aU-Lsr" firstAttribute="leading" secondItem="swc-b5-P59" secondAttribute="leading" id="wgR-2D-lCS"/>
+                <constraint firstItem="swc-b5-P59" firstAttribute="bottom" secondItem="ODy-Dn-BdP" secondAttribute="bottom" id="7rv-OB-HA3"/>
+                <constraint firstItem="ODy-Dn-BdP" firstAttribute="top" secondItem="swc-b5-P59" secondAttribute="top" id="JZq-1A-Swd"/>
+                <constraint firstItem="swc-b5-P59" firstAttribute="trailing" secondItem="ODy-Dn-BdP" secondAttribute="trailing" id="Oxm-BO-qi4"/>
+                <constraint firstItem="ODy-Dn-BdP" firstAttribute="leading" secondItem="swc-b5-P59" secondAttribute="leading" id="ihz-mw-XAW"/>
             </constraints>
             <point key="canvasLocation" x="111" y="124"/>
         </view>
