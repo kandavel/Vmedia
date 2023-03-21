@@ -15,8 +15,8 @@ protocol ChannelListInteractorProtocol: AnyObject {
 }
 
 protocol ChannelListInteractorOutputProtocol: AnyObject {
-    func didFetchChannelListData(completionhandler : Result<[Channel], NetworkError>)
-    func didFetchChannelProgramListData(completionhandler : Result<[ChannelProgram], NetworkError>)
+    func didFetchChannelListData(result : Result<[Channel], NetworkError>)
+    func didFetchChannelProgramListData(result : Result<[ChannelProgram], NetworkError>)
 }
 class ChannelListViewInteractor : ChannelListInteractorProtocol {
     var presenter: ChannelListInteractorOutputProtocol?
@@ -26,13 +26,13 @@ class ChannelListViewInteractor : ChannelListInteractorProtocol {
 extension ChannelListViewInteractor  {
     func fetchChannelListData() {
         networkManager?.request(Router.channelList(page: ""), decodeToType: [Channel].self, completionHandler: { (result) in
-            self.presenter?.didFetchChannelListData(completionhandler: result)
+            self.presenter?.didFetchChannelListData(result: result)
         })
     }
     
     func fetchChannelProgramListData() {
         networkManager?.request(Router.channelProgramList(page: ""), decodeToType: [ChannelProgram].self, completionHandler: { (result) in
-            self.presenter?.didFetchChannelProgramListData(completionhandler: result)
+            self.presenter?.didFetchChannelProgramListData(result: result)
         })
     }
 }

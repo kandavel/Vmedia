@@ -9,6 +9,7 @@ import Foundation
 import Alamofire
 
 typealias ResultCallback<T> = (Result<T, NetworkError>) -> Void
+typealias ChannelListResponse = (Result<[Channel], NetworkError>)
 
 protocol NetworkManagerProtocol  : AnyObject {
     func request<T: Codable>(_ request: URLRequestConvertible,

@@ -48,6 +48,9 @@
 		CC142E0C29C823F1009706C7 /* SpreadSheetCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC142E0B29C823F1009706C7 /* SpreadSheetCollection.swift */; };
 		CC508C7B29C8DA96000F6162 /* ChannelProgramList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC508C7A29C8DA96000F6162 /* ChannelProgramList.swift */; };
 		CC508C7D29C8EEF7000F6162 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC508C7C29C8EEF7000F6162 /* Date.swift */; };
+		CC508C7F29C9EB0E000F6162 /* Cells.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC508C7E29C9EB0E000F6162 /* Cells.swift */; };
+		CC508C8129CA3DC3000F6162 /* ChannelList.json in Resources */ = {isa = PBXBuildFile; fileRef = CC508C8029CA3DC3000F6162 /* ChannelList.json */; };
+		CC508C8329CA3DD7000F6162 /* ProgramList.json in Resources */ = {isa = PBXBuildFile; fileRef = CC508C8229CA3DD7000F6162 /* ProgramList.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,6 +117,9 @@
 		CC142E0B29C823F1009706C7 /* SpreadSheetCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpreadSheetCollection.swift; sourceTree = "<group>"; };
 		CC508C7A29C8DA96000F6162 /* ChannelProgramList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelProgramList.swift; sourceTree = "<group>"; };
 		CC508C7C29C8EEF7000F6162 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		CC508C7E29C9EB0E000F6162 /* Cells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cells.swift; sourceTree = "<group>"; };
+		CC508C8029CA3DC3000F6162 /* ChannelList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ChannelList.json; sourceTree = "<group>"; };
+		CC508C8229CA3DD7000F6162 /* ProgramList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ProgramList.json; sourceTree = "<group>"; };
 		D5534ED153350199E71FC375 /* Pods_VmediaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VmediaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9D532E3AEDA17167AB98638 /* Pods-Vmedia-VmediaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vmedia-VmediaUITests.release.xcconfig"; path = "Target Support Files/Pods-Vmedia-VmediaUITests/Pods-Vmedia-VmediaUITests.release.xcconfig"; sourceTree = "<group>"; };
 		E08855BC5AE700023402E402 /* Pods-Vmedia.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vmedia.release.xcconfig"; path = "Target Support Files/Pods-Vmedia/Pods-Vmedia.release.xcconfig"; sourceTree = "<group>"; };
@@ -208,6 +214,8 @@
 			isa = PBXGroup;
 			children = (
 				CC075D0B29C459A900664C7D /* VmediaTests.swift */,
+				CC508C8029CA3DC3000F6162 /* ChannelList.json */,
+				CC508C8229CA3DD7000F6162 /* ProgramList.json */,
 			);
 			path = VmediaTests;
 			sourceTree = "<group>";
@@ -343,6 +351,7 @@
 			isa = PBXGroup;
 			children = (
 				CC075D4E29C50A6F00664C7D /* ChannelCollecitonViewCell.swift */,
+				CC508C7E29C9EB0E000F6162 /* Cells.swift */,
 				CC075D5229C5138A00664C7D /* ChannelCollecitonViewCell.xib */,
 			);
 			path = View;
@@ -487,6 +496,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC508C8129CA3DC3000F6162 /* ChannelList.json in Resources */,
+				CC508C8329CA3DD7000F6162 /* ProgramList.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -618,6 +629,7 @@
 				CC075D4529C4F1A800664C7D /* ChannelListViewController.swift in Sources */,
 				CC075D5529C5140C00664C7D /* Router.swift in Sources */,
 				CC075CF629C459A800664C7D /* ViewController.swift in Sources */,
+				CC508C7F29C9EB0E000F6162 /* Cells.swift in Sources */,
 				CC142E0C29C823F1009706C7 /* SpreadSheetCollection.swift in Sources */,
 				CC075D3829C4E52700664C7D /* ImageLoader.swift in Sources */,
 				CC075D6A29C703A900664C7D /* Optional.swift in Sources */,

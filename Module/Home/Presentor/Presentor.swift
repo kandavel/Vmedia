@@ -14,11 +14,15 @@ protocol ChannelListPresentorProtocol: AnyObject {
     func viewDidLoad()
     func numberOfColumnCount() -> Int
     func numberOfRowsCount() -> Int
-    
-    
+    func getTodaysDateString() -> String
+    func getChannelInfo(indexPath : IndexPath) -> ChannelProgramList?
+    func getHoursinfo(indexPath : IndexPath) -> String
+    func getChannelProgramInfo(indexPath : IndexPath) -> Program?
+    func getTitle() -> String
 }
 
 class ChannelListPresentor: ChannelListPresentorProtocol {
+    
     var view: HomeViewProtocol?
     var interactor: ChannelListInteractorProtocol?
     var wireframe: ChannelListProtocol?
@@ -29,8 +33,11 @@ class ChannelListPresentor: ChannelListPresentorProtocol {
     let dispatchGroup  = DispatchGroup()
     let sempaphore  = DispatchSemaphore(value: 0)
     fileprivate var timeIntervals: [Date] = []
+    fileprivate let currentDate = Date()
     
     func viewDidLoad() {
+        self.view?.showTitle()
+        self.view?.registerNib()
         self.view?.registerCollectionView()
         self.view?.showLoadingView()
         self.view?.hideView()
@@ -49,16 +56,44 @@ class ChannelListPresentor: ChannelListPresentorProtocol {
     }
     
     func numberOfColumnCount() -> Int {
+        if self.channels.isEmpty {
+            return 0
+        }
         return self.channels.count + 1
     }
     
     func numberOfRowsCount() -> Int {
+        if self.timeIntervals.isEmpty {
+            return 0
+        }
         return self.timeIntervals.count + 1
     }
     
+    func getChannelInfo(indexPath : IndexPath) -> ChannelProgramList? {
+        return self.channelProgramList[safe : indexPath.row - 1]
+    }
+    
+    func getChannelProgramInfo(indexPath : IndexPath) -> Program? {
+        return self.channelProgramList[safe : indexPath.row - 1]?.programList[safe : indexPath.column - 1]
+    }
+    
+    func getHoursinfo(indexPath : IndexPath) -> String {
+        return self.timeIntervals[safe: indexPath.column - 1]?.toString(dateFormat: DateFormat.Time) ?? ""
+    }
+    
+    func getTitle() -> String {
+        return "VMedia"
+    }
+    
+    func getTodaysDateString() -> String {
+        let todaysString  = currentDate.getReadableDateStringFromDate(date: currentDate)
+        return "Today, \(todaysString)"
+    }
+    
     func setChannelListData() {
-        setChannelProgramlist()
         setTimeHours()
+        setChannelProgramlist()
+        
     }
     
     func  setChannelProgramlist() {
@@ -71,13 +106,15 @@ class ChannelListPresentor: ChannelListPresentorProtocol {
     
     func createProgramList(list : [ChannelProgram]) -> [Program] {
         var programSortList = list.map { (program) -> Program in
-            let startTimeStr  = (program.startTime ?? Date()).toString(dateFormat: .Time)
-            let program =  Program(name: program.name, startTime: startTimeStr, startTimeDate: program.startTime, length: program.length, programId: program.recentAirTime?.id)
+            let startTimeDate  = (program.startTime ?? "").getDate() ?? Date()
+            let startTimeStr  = startTimeDate.toString(dateFormat: DateFormat.Time)
+            let program =  Program(name: program.name, startTime: startTimeStr, startTimeDate: startTimeDate, length: program.length, programId: program.recentAirTime?.id)
             return program
         }
         programSortList = programSortList.sorted { program1, program2 in
             return program1.startTimeDate ?? Date() < program2.startTimeDate ?? Date()
         }
+        
         return programSortList
     }
     
@@ -93,12 +130,11 @@ class ChannelListPresentor: ChannelListPresentorProtocol {
         print(timeIntervals)
     }
     
-    
 }
 
 extension ChannelListPresentor: ChannelListInteractorOutputProtocol {
-    func didFetchChannelProgramListData(completionhandler: Result<[ChannelProgram], NetworkError>) {
-        switch completionhandler {
+    func didFetchChannelProgramListData(result: Result<[ChannelProgram], NetworkError>) {
+        switch result {
         case .success(let data):
             self.programList  = data
             break
@@ -108,8 +144,8 @@ extension ChannelListPresentor: ChannelListInteractorOutputProtocol {
         self.sempaphore.signal()
     }
     
-    func didFetchChannelListData(completionhandler: Result<[Channel], NetworkError>) {
-        switch completionhandler {
+    func didFetchChannelListData(result: Result<[Channel], NetworkError>) {
+        switch result {
         case .success(let data):
             self.channels  = data
             break

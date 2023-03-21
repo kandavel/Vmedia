@@ -9,7 +9,7 @@ import Foundation
 
 // MARK: - ChannelProgramElement
 struct ChannelProgram: Codable {
-    var startTime: Date?
+    var startTime: String?
     var recentAirTime: RecentAirTime?
     var length: Int?
     var name: String?

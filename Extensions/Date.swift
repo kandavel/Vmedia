@@ -75,4 +75,39 @@ extension Date {
     dateFormatter.dateFormat = dateFormat.value
     return dateFormatter.string(from: self)
     }
+    
+    func getReadableDateStringFromDate(date : Date) -> String {
+        let calendar  = Calendar.current
+        let dateComponents = calendar.component(.day, from: date)
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = .ordinal
+        let day = numberFormatter.string(from: ((dateComponents) as NSNumber))
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale  = Locale.init(identifier: "en_US")
+        dateFormatter.dateFormat = DateFormat.Custom(format: "MMM").value
+        dateFormatter.timeZone = NSTimeZone.local
+        let dateString = "\(day!) \(dateFormatter.string(from: date))"
+        return dateString
+    }
+}
+public extension Collection where Indices.Iterator.Element == Index {
+  subscript (safe index: Index) -> Iterator.Element? {
+    return indices.contains(index) ? self[index] : nil
+  }
+}
+
+extension String {
+    func getDate(formatString:String? = nil) -> Date?{
+        let dateFmt = DateFormatter()
+        dateFmt.locale  = Locale.init(identifier: "en_US")
+        dateFmt.dateFormat = DateFormat.dateWTimeZoneFormat.value
+        dateFmt.timeZone = NSTimeZone.local
+        var dateFormat:String = "yyyy-MM-dd HH:mm:ss"
+        if formatString != nil{
+            dateFormat = formatString ?? ""
+        }
+        dateFmt.dateFormat =  dateFormat
+        return dateFmt.date(from: self)
+        
+    }
 }
