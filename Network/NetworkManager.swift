@@ -23,9 +23,9 @@ final class NetworkManager {
         return instance
     }()
 
-    let reachabilityManager = NetworkReachabilityManager()?.isReachable
+    
     fileprivate let parser: Parser =  Parser()
-
+    let reachabilityManager = NetworkReachabilityManager()?.isReachable
     func isConnectedToInternet() -> Bool {
         return reachabilityManager ?? false
     }
